@@ -1050,3 +1050,114 @@ hr,
     border-radius: var(--ba-radius-sm);
   }
 }
+
+/* ===== BetAura Targeted Overrides ===== */
+
+/* Main background */
+html,
+body,
+#root {
+  background: #0a0e10 !important;
+  color: #e8eaed !important;
+}
+
+/* Header */
+[data-mj="custom-header"],
+[data-mj="header"] {
+  background: rgba(11, 15, 20, 0.96) !important;
+  border-bottom: 1px solid rgba(80, 210, 193, 0.18) !important;
+  box-shadow: 0 2px 20px rgba(80, 210, 193, 0.08) !important;
+}
+
+/* Sidebar */
+[data-mj="sidebar"],
+[data-mj="sidebar-content"],
+[data-mj="sidebar-nav"] {
+  background: #12171b !important;
+}
+
+/* Sidebar items */
+[data-mj="sidebar-section"],
+[data-mj="sidebar-special-button"] {
+  background: #252a32 !important;
+  border-radius: 12px !important;
+  margin-bottom: 6px !important;
+}
+
+[data-mj="sidebar-section"] a,
+[data-mj="sidebar-special-button"] a {
+  color: #e8eaed !important;
+}
+
+[data-mj="sidebar-section"]:hover,
+[data-mj="sidebar-special-button"]:hover {
+  background: rgba(80, 210, 193, 0.12) !important;
+  box-shadow: 0 0 18px rgba(80, 210, 193, 0.18) !important;
+}
+
+/* Login button */
+[data-mj="login-button"] {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(80, 210, 193, 0.22) !important;
+  color: #e8eaed !important;
+  border-radius: 12px !important;
+}
+
+/* Register button */
+[data-mj="register-button"] {
+  background: linear-gradient(180deg, #64dfd1, #50d2c1) !important;
+  color: #061413 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 0 25px rgba(80, 210, 193, 0.35) !important;
+}
+
+[data-mj="register-button"]:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 0 35px rgba(80, 210, 193, 0.5) !important;
+}
+
+/* Game cards */
+[data-mj="widget-game-card"],
+[data-mj="widget-game-slider-slide"] {
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  transition: all 0.25s ease !important;
+}
+
+[data-mj="widget-game-card"]:hover {
+  transform: translateY(-4px) !important;
+  box-shadow:
+    0 0 25px rgba(80, 210, 193, 0.25),
+    0 0 45px rgba(80, 210, 193, 0.12) !important;
+}
+
+[data-mj="widget-game-card"] img {
+  border-radius: 14px !important;
+}
+
+/* Banner */
+[data-mj="widget-banner"],
+[data-mj="widget-banner-slider"],
+[data-mj="widget-banner-container"] {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+}
+
+/* Images */
+[data-mj="widget-banner"] img,
+[data-mj="widget-game-card"] img {
+  object-fit: cover !important;
+}
+
+/* Section titles */
+h1,
+h2,
+h3 {
+  color: #e8eaed !important;
+}
+
+/* Safer general buttons */
+button,
+[role="button"] {
+  border-radius: 10px !important;
+}
