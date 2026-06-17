@@ -1617,3 +1617,41 @@ body,
   box-shadow:
     0 0 20px rgba(80,210,193,.25) !important;
 }
+
+/* ===== FIX SIDEBAR FRAME & COLLAPSE BUTTON ===== */
+
+[data-mj="sidebar-content"],
+.app-ltr-1khil54,
+.app-ltr-py5jdu,
+.app-ltr-tnx8um {
+  border: none !important;
+  outline: none !important;
+
+  box-shadow:
+    inset -1px 0 0 rgba(80,210,193,.25),
+    10px 0 24px rgba(80,210,193,.06) !important;
+}
+
+/* Remove extra vertical glow layers */
+
+.app-ltr-py5jdu::before,
+.app-ltr-py5jdu::after,
+.app-ltr-tnx8um::before,
+.app-ltr-tnx8um::after,
+[data-mj="sidebar-content"]::before,
+[data-mj="sidebar-content"]::after {
+  display: none !important;
+}
+
+/* Collapse button */
+
+.app-ltr-py5jdu button,
+.app-ltr-tnx8um button,
+[data-mj="sidebar-content"] button {
+  border: 1px solid rgba(80,210,193,.30) !important;
+  background: rgba(7,22,24,.92) !important;
+
+  box-shadow:
+    inset 0 0 10px rgba(80,210,193,.05),
+    0 0 10px rgba(80,210,193,.12) !important;
+}
