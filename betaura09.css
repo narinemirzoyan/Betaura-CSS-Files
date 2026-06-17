@@ -986,3 +986,19 @@ hr.app-ltr-5ciqmr {
 
   margin: 24px 0 !important;
 }
+
+hr.app-ltr-5ciqmr {
+  border: none !important;
+  height: 2px !important;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #50d2c1 50%,
+    transparent 100%
+  ) !important;
+
+  box-shadow:
+    0 0 20px rgba(80,210,193,.7),
+    0 0 40px rgba(80,210,193,.35) !important;
+}
