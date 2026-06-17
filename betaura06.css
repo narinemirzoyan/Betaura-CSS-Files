@@ -1,0 +1,897 @@
+/* =========================================================
+   BetAura Final Clean Teal Glow Theme
+   Includes: partner base style + cleaned Betaura-specific overrides
+   Replace the current betaura.css with this file.
+   ========================================================= */
+
+/* ---------- Design tokens ---------- */
+:root {
+  --ba-bg-0: #070c0e;
+  --ba-bg-1: #0a1113;
+  --ba-bg-2: #0d1517;
+
+  --ba-panel: rgba(15, 25, 28, 0.72);
+  --ba-panel-solid: #11191c;
+  --ba-panel-hover: rgba(18, 31, 34, 0.86);
+
+  --ba-sidebar: rgba(13, 20, 23, 0.88);
+  --ba-header: rgba(8, 13, 15, 0.78);
+  --ba-footer: rgba(12, 21, 24, 0.72);
+
+  --ba-cyan: #50d2c1;
+  --ba-cyan-bright: #74f2e4;
+  --ba-cyan-soft: rgba(80, 210, 193, 0.12);
+  --ba-cyan-border: rgba(80, 210, 193, 0.28);
+  --ba-cyan-border-soft: rgba(80, 210, 193, 0.18);
+
+  --ba-white: #f3f6f7;
+  --ba-text: #e6ebee;
+  --ba-muted: #8d98a3;
+  --ba-dim: #66717a;
+  --ba-red: #f6465d;
+
+  --ba-border: rgba(255, 255, 255, 0.06);
+  --ba-border-2: rgba(255, 255, 255, 0.095);
+
+  --ba-radius: 10px;
+  --ba-radius-sm: 8px;
+  --ba-radius-lg: 14px;
+
+  --ba-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ba-mono: "Roboto Mono", "SFMono-Regular", Consolas, monospace;
+  --ba-ease: 160ms ease-out;
+}
+
+/* ---------- Base background ---------- */
+html,
+body,
+#root {
+  min-height: 100%;
+  color: var(--ba-text);
+  font-family: var(--ba-font);
+  background:
+    radial-gradient(900px 520px at 62% -10%, rgba(80, 210, 193, 0.18), transparent 58%),
+    radial-gradient(780px 520px at 18% 8%, rgba(80, 210, 193, 0.08), transparent 55%),
+    radial-gradient(900px 620px at 61% 96%, rgba(80, 210, 193, 0.13), transparent 52%),
+    linear-gradient(180deg, #0b1113 0%, #080d0f 46%, #0a1113 100%) !important;
+  background-attachment: fixed !important;
+  letter-spacing: -0.01em;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    linear-gradient(90deg, transparent 0 97%, rgba(80, 210, 193, 0.025) 100%),
+    linear-gradient(0deg, transparent 0 97%, rgba(80, 210, 193, 0.018) 100%);
+  background-size: 72px 72px;
+  opacity: 0.22;
+  mask-image: radial-gradient(circle at 55% 40%, black, transparent 74%);
+}
+
+#root,
+.app,
+.layout,
+.page,
+.main,
+.content,
+.main-content,
+.page-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Remove harsh section blocks ---------- */
+.app,
+.layout,
+.page,
+.main,
+.content,
+.main-content,
+.page-content,
+.container,
+.content-container,
+.page-container,
+.section,
+.sections,
+.home-section,
+.games-section,
+.content-section,
+.row-section,
+.page-section,
+.category-section,
+.providers-section,
+.winners-section,
+.aura-picks,
+.slots-section,
+.live-casino-section,
+.crash-games-section,
+.promotions-section,
+[class*="section"],
+[class*="Section"] {
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.section:hover,
+.sections:hover,
+.home-section:hover,
+.games-section:hover,
+.content-section:hover,
+.row-section:hover,
+.page-section:hover,
+.category-section:hover,
+.providers-section:hover,
+.winners-section:hover,
+.aura-picks:hover,
+.slots-section:hover,
+.live-casino-section:hover,
+.crash-games-section:hover,
+.promotions-section:hover,
+[class*="section"]:hover,
+[class*="Section"]:hover {
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.section::before,
+.sections::before,
+.home-section::before,
+.games-section::before,
+.content-section::before,
+.row-section::before,
+.page-section::before,
+.category-section::before,
+.providers-section::before,
+.winners-section::before,
+.main-content::before,
+.page-content::before,
+.content::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* =========================================================
+   Header - exact Betaura classes
+   ========================================================= */
+
+html body div[aria-label="site-header"][data-mj="custom-header"].app-ltr-zuu3g9,
+html body div[data-mj="custom-header"].app-ltr-zuu3g9,
+header,
+.header,
+.topbar,
+.navbar,
+.app-header {
+  background:
+    radial-gradient(700px 130px at 55% 0%, rgba(80,210,193,.18), transparent 70%),
+    rgba(3, 12, 14, .96) !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(80,210,193,.45) !important;
+  box-shadow:
+    inset 0 -1px 0 rgba(80,210,193,.30),
+    0 8px 28px rgba(80,210,193,.10) !important;
+  backdrop-filter: blur(18px) saturate(1.05);
+  -webkit-backdrop-filter: blur(18px) saturate(1.05);
+}
+
+html body div[aria-label="site-header"] .app-ltr-jbtkju,
+html body div[aria-label="site-header"] .app-ltr-q1waau,
+html body div[aria-label="site-header"] .app-ltr-1rhgrqx,
+html body div[aria-label="site-header"] .app-ltr-cvus8s,
+[data-mj="header-left"],
+[data-mj="header-center"],
+[data-mj="header-right"] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+[data-mj="header-right"],
+.app-ltr-1rhgrqx {
+  gap: 12px !important;
+}
+
+[data-mj="logo"] img,
+.app-ltr-le4fez {
+  filter: drop-shadow(0 0 10px rgba(80,210,193,.25)) !important;
+}
+
+html body div[aria-label="site-header"] a[data-mj="header-special-button"],
+html body div[aria-label="site-header"] a[data-mj="login-button"],
+html body div[aria-label="site-header"] a[data-mj="register-button"],
+html body div[aria-label="site-header"] .sl-select__control,
+[data-mj="header-special-button"],
+[data-mj="login-button"],
+[data-mj="register-button"],
+.app-ltr-6pnhkd,
+.app-ltr-z5fvu1,
+.app-ltr-576p8x,
+.app-ltr-7c1sc7-control {
+  border-radius: 10px !important;
+  border: 1px solid rgba(80,210,193,.45) !important;
+  box-shadow:
+    inset 0 0 12px rgba(80,210,193,.06),
+    0 0 16px rgba(80,210,193,.14) !important;
+}
+
+html body div[aria-label="site-header"] a[data-mj="login-button"],
+[data-mj="login-button"],
+.app-ltr-z5fvu1 {
+  background: rgba(5,18,20,.88) !important;
+  color: #ffffff !important;
+}
+
+html body div[aria-label="site-header"] a[data-mj="register-button"],
+[data-mj="register-button"],
+.app-ltr-576p8x,
+.btn-primary,
+.button-primary,
+.primary,
+.register,
+[data-variant="primary"] {
+  background: linear-gradient(180deg, #8cf8ec, #50d2c1) !important;
+  color: #061312 !important;
+  font-weight: 800 !important;
+  border-color: rgba(116,242,228,.70) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.35),
+    0 0 22px rgba(80,210,193,.25) !important;
+}
+
+/* =========================================================
+   Sidebar - exact Betaura classes
+   ========================================================= */
+
+[data-mj="sidebar-content"],
+.app-ltr-1khil54,
+.app-ltr-py5jdu,
+.app-ltr-tnx8um,
+[data-mj="sidebar-nav"],
+.app-ltr-upe1zs,
+aside,
+.sidebar,
+.left-sidebar,
+.side-menu,
+.left-nav {
+  background:
+    radial-gradient(450px 400px at 100% 40%, rgba(80,210,193,.10), transparent 70%),
+    rgba(4,14,16,.92) !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow:
+    inset -1px 0 0 rgba(80,210,193,.25),
+    10px 0 25px rgba(80,210,193,.05) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.app-ltr-py5jdu::before,
+.app-ltr-py5jdu::after,
+.app-ltr-tnx8um::before,
+.app-ltr-tnx8um::after,
+[data-mj="sidebar-content"]::before,
+[data-mj="sidebar-content"]::after {
+  display: none !important;
+}
+
+[data-mj="sidebar-nav-list"],
+.app-ltr-0 {
+  background: transparent !important;
+  padding: 12px 10px !important;
+}
+
+[data-mj="sidebar-section"],
+.app-ltr-ulqgb0 {
+  margin-bottom: 8px !important;
+}
+
+ul[data-mj="sidebar-nav-list"] a.sl-navlink.app-ltr-1v4y1zo,
+ul[data-mj="sidebar-nav-list"] a.app-ltr-ditbe6,
+a.sl-navlink.app-ltr-1v4y1zo,
+.sl-navlink,
+.app-ltr-1v4y1zo,
+.app-ltr-ditbe6 {
+  min-height: 42px !important;
+  border-radius: 10px !important;
+  background:
+    linear-gradient(180deg, rgba(11,30,32,.96), rgba(5,14,16,.94)) !important;
+  border: 1px solid rgba(80,210,193,.34) !important;
+  color: #f3ffff !important;
+  box-shadow:
+    inset 0 0 10px rgba(80,210,193,.05),
+    0 0 10px rgba(80,210,193,.08) !important;
+  transition: all .2s ease !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+ul[data-mj="sidebar-nav-list"] a.sl-navlink.app-ltr-1v4y1zo:hover,
+ul[data-mj="sidebar-nav-list"] a.app-ltr-ditbe6:hover,
+a.sl-navlink.app-ltr-1v4y1zo:hover,
+.sl-navlink:hover,
+.app-ltr-1v4y1zo:hover,
+.app-ltr-ditbe6:hover {
+  border-color: rgba(116,242,228,.78) !important;
+  box-shadow:
+    inset 0 0 18px rgba(80,210,193,.12),
+    0 0 18px rgba(80,210,193,.18) !important;
+  color: #74f2e4 !important;
+}
+
+ul[data-mj="sidebar-nav-list"] a.sl-navlink.app-ltr-1v4y1zo.active-link,
+ul[data-mj="sidebar-nav-list"] a.sl-navlink.app-ltr-1v4y1zo[aria-current="page"],
+a.sl-navlink.app-ltr-1v4y1zo.active-link,
+a.sl-navlink.app-ltr-1v4y1zo[aria-current="page"],
+.sl-navlink.active-link,
+.app-ltr-1v4y1zo.active-link,
+.sl-navlink[aria-current="page"] {
+  border-color: rgba(116,242,228,.85) !important;
+  background:
+    linear-gradient(180deg, rgba(80,210,193,.18), rgba(12,40,42,.95)) !important;
+  box-shadow:
+    inset 0 0 16px rgba(80,210,193,.14),
+    0 0 18px rgba(80,210,193,.16) !important;
+  color: #74f2e4 !important;
+}
+
+.app-ltr-10t84xr,
+.app-ltr-1h2gnhw {
+  color: inherit !important;
+  font-weight: 600 !important;
+}
+
+.app-ltr-1trb7go,
+.app-ltr-76xqen {
+  flex-shrink: 0 !important;
+  filter: drop-shadow(0 0 6px rgba(80,210,193,.35)) !important;
+}
+
+[data-mj="sidebar-footer"],
+.app-ltr-1ermvjc {
+  background: transparent !important;
+  border-top: 0 !important;
+  box-shadow: inset 0 1px 0 rgba(80,210,193,.18) !important;
+}
+
+[data-mj="sidebar-collapse"],
+.app-ltr-12nlbd9 {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 10px !important;
+  background: rgba(7,22,24,.92) !important;
+  border: 1px solid rgba(80,210,193,.30) !important;
+  box-shadow:
+    inset 0 0 10px rgba(80,210,193,.05),
+    0 0 10px rgba(80,210,193,.10) !important;
+  color: #ffffff !important;
+}
+
+[data-mj="sidebar-collapse"]:hover,
+.app-ltr-12nlbd9:hover {
+  border-color: rgba(116,242,228,.75) !important;
+  box-shadow:
+    inset 0 0 16px rgba(80,210,193,.12),
+    0 0 18px rgba(80,210,193,.20) !important;
+  color: #74f2e4 !important;
+}
+
+/* =========================================================
+   Top categories, buttons, inputs
+   ========================================================= */
+
+.search-bar,
+.category-bar,
+.category-tabs,
+.game-tabs,
+.nav-tabs,
+.tabs,
+.segmented-control,
+.top-categories {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.category-tabs button,
+.game-tabs button,
+.nav-tabs button,
+.tabs button,
+.segmented-control button,
+.top-categories button,
+.category-item,
+.tab,
+.filter-chip,
+.icon-button,
+.header-icon {
+  background:
+    linear-gradient(180deg, rgba(10,29,31,.95), rgba(5,15,17,.82)) !important;
+  border: 1px solid rgba(80,210,193,.38) !important;
+  border-radius: 10px !important;
+  color: #f2ffff !important;
+  box-shadow: 0 0 12px rgba(80,210,193,.10) !important;
+  backdrop-filter: blur(10px);
+  transition: all var(--ba-ease);
+}
+
+.category-tabs button:hover,
+.game-tabs button:hover,
+.nav-tabs button:hover,
+.tabs button:hover,
+.segmented-control button:hover,
+.top-categories button:hover,
+.category-item:hover,
+.tab:hover,
+.filter-chip:hover,
+.icon-button:hover,
+.header-icon:hover,
+.category-tabs button.active,
+.game-tabs button.active,
+.nav-tabs button.active,
+.tabs button.active,
+.segmented-control button.active,
+.top-categories button.active,
+.category-item.active,
+.tab.active,
+.filter-chip.active,
+[aria-selected="true"] {
+  border-color: rgba(116,242,228,.75) !important;
+  color: #74f2e4 !important;
+  box-shadow:
+    inset 0 0 14px rgba(80,210,193,.08),
+    0 0 18px rgba(80,210,193,.14) !important;
+}
+
+button,
+.btn,
+.button,
+[role="button"] {
+  border-radius: 9px;
+  border: 1px solid rgba(80,210,193,.16);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.015));
+  color: var(--ba-text);
+  font-family: var(--ba-font);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.025),
+    0 0 12px rgba(80,210,193,.025);
+  transition: all var(--ba-ease);
+}
+
+button:hover,
+.btn:hover,
+.button:hover,
+[role="button"]:hover {
+  border-color: rgba(80,210,193,.36);
+  background:
+    linear-gradient(180deg, rgba(80,210,193,.12), rgba(80,210,193,.035));
+  box-shadow:
+    inset 0 0 14px rgba(80,210,193,.045),
+    0 0 16px rgba(80,210,193,.08);
+}
+
+.search,
+.search-box,
+.search-input,
+.input,
+input,
+textarea,
+select,
+input[type="search"] {
+  background:
+    linear-gradient(180deg, rgba(10,19,21,.86), rgba(10,18,20,.66)) !important;
+  border: 1px solid rgba(80,210,193,.16) !important;
+  border-radius: 10px !important;
+  color: var(--ba-text) !important;
+  outline: none !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.025),
+    0 0 18px rgba(80,210,193,.025) !important;
+  transition: all var(--ba-ease);
+}
+
+.search::placeholder,
+.search-input::placeholder,
+.input::placeholder,
+input::placeholder,
+textarea::placeholder {
+  color: var(--ba-muted) !important;
+}
+
+.search:focus,
+.search-box:focus-within,
+.search-input:focus,
+.input:focus,
+input:focus,
+textarea:focus,
+select:focus,
+input[type="search"]:focus {
+  border-color: rgba(80,210,193,.42) !important;
+  box-shadow:
+    0 0 0 2px rgba(80,210,193,.10),
+    0 0 22px rgba(80,210,193,.08),
+    inset 0 0 14px rgba(80,210,193,.035) !important;
+}
+
+/* =========================================================
+   Cards, panels, banners
+   ========================================================= */
+
+.card,
+.game-card,
+.event-card,
+.tile,
+.item-card,
+.match-card,
+.provider-card,
+.provider-item,
+.winner-card,
+.promo-card,
+.banner-card,
+.box,
+.panel,
+.widget,
+.table-card,
+.modal-content,
+.dropdown-menu {
+  background:
+    radial-gradient(520px 260px at 78% 10%, rgba(80,210,193,.055), transparent 58%),
+    linear-gradient(180deg, rgba(16,27,30,.76), rgba(11,17,19,.70)) !important;
+  border: 1px solid rgba(80,210,193,.14) !important;
+  border-radius: var(--ba-radius) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.025),
+    0 0 18px rgba(80,210,193,.025) !important;
+  color: var(--ba-text);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all var(--ba-ease);
+}
+
+.card:hover,
+.game-card:hover,
+.event-card:hover,
+.tile:hover,
+.item-card:hover,
+.match-card:hover,
+.provider-card:hover,
+.provider-item:hover,
+.winner-card:hover,
+.promo-card:hover,
+.banner-card:hover,
+.box:hover,
+.panel:hover,
+.widget:hover,
+.table-card:hover,
+.modal-content:hover,
+.dropdown-menu:hover {
+  border-color: rgba(80,210,193,.34) !important;
+  box-shadow:
+    inset 0 0 16px rgba(80,210,193,.04),
+    0 0 18px rgba(80,210,193,.075),
+    0 0 42px rgba(80,210,193,.03) !important;
+  transform: translateY(-1px);
+}
+
+.hero,
+.banner,
+.carousel,
+.promo-banner,
+.main-banner {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(760px 320px at 80% 18%, rgba(80,210,193,.06), transparent 65%),
+    rgba(10,16,18,.70) !important;
+  border: 1px solid rgba(80,210,193,.16) !important;
+  border-radius: 14px !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.025),
+    0 0 22px rgba(80,210,193,.035) !important;
+}
+
+.game-card img,
+.winner-card img,
+.item-card img,
+.tile img,
+.event-card img,
+.hero img,
+.banner img,
+.carousel img,
+.promo-banner img,
+.main-banner img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* =========================================================
+   Tables / leaderboard / winners
+   ========================================================= */
+
+table,
+.data-table,
+.winners-table,
+.leaderboard-table {
+  background:
+    radial-gradient(700px 320px at 90% 10%, rgba(80,210,193,.12), transparent 62%),
+    rgba(5,22,25,.82) !important;
+  border: 1px solid rgba(80,210,193,.36) !important;
+  border-radius: 16px !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(80,210,193,.08),
+    0 0 34px rgba(80,210,193,.18),
+    inset 0 1px 0 rgba(255,255,255,.04) !important;
+}
+
+th,
+td {
+  padding: 15px 24px !important;
+  border-bottom: 1px solid rgba(255,255,255,.06) !important;
+  color: #eaf6f7 !important;
+}
+
+th {
+  color: #ffffff !important;
+  font-size: 11px !important;
+  font-weight: 800;
+  text-transform: uppercase !important;
+  letter-spacing: .05em !important;
+  background: transparent !important;
+}
+
+tr:hover td {
+  background: rgba(80,210,193,.045) !important;
+}
+
+.value,
+.amount,
+.price,
+.stat,
+.number,
+.odds,
+.balance {
+  font-family: var(--ba-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.positive,
+.up,
+.success,
+.win,
+.amount,
+.payout {
+  color: #02d982 !important;
+}
+
+.negative,
+.down,
+.error,
+.danger,
+.loss {
+  color: var(--ba-red) !important;
+}
+
+/* =========================================================
+   Footer - exact Betaura classes
+   ========================================================= */
+
+html body footer[data-mj="footer"].app-ltr-17pabxy,
+footer[data-mj="footer"],
+footer,
+.footer,
+.site-footer {
+  background:
+    radial-gradient(700px 220px at 48% 0%, rgba(80,210,193,.14), transparent 65%),
+    rgba(4,14,16,.92) !important;
+  border-top: 1px solid rgba(80,210,193,.35) !important;
+  box-shadow: 0 -18px 40px rgba(80,210,193,.08) !important;
+  color: var(--ba-text);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+html body footer[data-mj="footer"] .app-ltr-cfnr2u,
+html body footer[data-mj="footer"] .app-ltr-ywf5jp,
+html body footer[data-mj="footer"] .app-ltr-176106l,
+html body footer[data-mj="footer"] .app-ltr-1uzs5zs,
+footer[data-mj="footer"] [data-mj="footer-content"],
+footer[data-mj="footer"] [data-mj="footer-top"],
+footer[data-mj="footer"] [data-mj="footer-bottom"],
+footer[data-mj="footer"] [data-mj="footer-nav"] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+footer[data-mj="footer"] [data-mj="footer-nav"],
+.app-ltr-1uzs5zs {
+  display: flex !important;
+  gap: 40px !important;
+}
+
+html body footer[data-mj="footer"] a.sl-navlink.app-ltr-4qstdc,
+footer[data-mj="footer"] a.sl-navlink,
+[data-mj="footer-nav"] .app-ltr-4qstdc,
+.app-ltr-4qstdc {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  color: #dffafa !important;
+  font-weight: 500 !important;
+}
+
+html body footer[data-mj="footer"] a.sl-navlink.app-ltr-4qstdc:hover,
+footer[data-mj="footer"] a.sl-navlink:hover,
+[data-mj="footer-nav"] .app-ltr-4qstdc:hover {
+  color: #74f2e4 !important;
+  text-shadow: 0 0 10px rgba(80,210,193,.45) !important;
+}
+
+footer[data-mj="footer"] .app-ltr-1lwn41g,
+footer[data-mj="footer"] .app-ltr-7c1sc7-control {
+  background: rgba(5,18,20,.85) !important;
+  border: 1px solid rgba(80,210,193,.34) !important;
+  box-shadow: 0 0 12px rgba(80,210,193,.10) !important;
+}
+
+footer[data-mj="footer"] hr.app-ltr-5ciqmr,
+footer hr,
+.footer hr,
+.app-ltr-5ciqmr {
+  border: 0 !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, transparent, rgba(80,210,193,.65), transparent) !important;
+  box-shadow: 0 0 14px rgba(80,210,193,.35) !important;
+}
+
+[data-mj="social-links"] a,
+.app-ltr-4cj164 {
+  background: rgba(8,24,26,.72) !important;
+  border: 1px solid rgba(80,210,193,.25) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 0 12px rgba(80,210,193,.10) !important;
+}
+
+[data-mj="social-links"] a:hover,
+.app-ltr-4cj164:hover {
+  border-color: rgba(116,242,228,.70) !important;
+  box-shadow: 0 0 20px rgba(80,210,193,.25) !important;
+}
+
+[data-mj="footer-copyright"],
+.app-ltr-1959n0c {
+  color: #dffafa !important;
+}
+
+/* =========================================================
+   Misc
+   ========================================================= */
+
+h1,
+h2,
+h3,
+.section-title,
+.row-title,
+.card-title,
+.game-title {
+  color: var(--ba-white) !important;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.card-meta,
+.game-provider,
+.event-meta,
+.match-meta,
+.tile-meta,
+.muted,
+.text-muted {
+  color: var(--ba-muted) !important;
+}
+
+.badge,
+.chip,
+.tag,
+.live-badge,
+.language-selector,
+.currency-selector,
+.profile-menu,
+.account-chip,
+.user-chip {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015)) !important;
+  border: 1px solid rgba(80,210,193,.16) !important;
+  border-radius: 9px !important;
+  color: var(--ba-text) !important;
+  box-shadow: 0 0 12px rgba(80,210,193,.025) !important;
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: rgba(20,31,34,.8) !important;
+  border-radius: 9px;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background:
+    linear-gradient(110deg, transparent 0%, rgba(80,210,193,.055) 45%, rgba(255,255,255,.04) 52%, transparent 80%);
+  animation: baSkeletonSweep 1.35s infinite;
+}
+
+@keyframes baSkeletonSweep {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(80,210,193,.26) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(80,210,193,.20);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(80,210,193,.34);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .tabs,
+  .category-tabs,
+  .segmented-control,
+  .game-tabs,
+  .nav-tabs,
+  .top-categories {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .tabs::-webkit-scrollbar,
+  .category-tabs::-webkit-scrollbar,
+  .segmented-control::-webkit-scrollbar,
+  .game-tabs::-webkit-scrollbar,
+  .nav-tabs::-webkit-scrollbar,
+  .top-categories::-webkit-scrollbar {
+    display: none;
+  }
+
+  .game-card,
+  .event-card,
+  .tile,
+  .item-card,
+  .match-card,
+  .winner-card,
+  .provider-card {
+    border-radius: 8px !important;
+  }
+}
