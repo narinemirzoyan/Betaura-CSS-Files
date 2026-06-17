@@ -1655,3 +1655,77 @@ body,
     inset 0 0 10px rgba(80,210,193,.05),
     0 0 10px rgba(80,210,193,.12) !important;
 }
+
+/* ===== SIDEBAR COLLAPSE BUTTON ===== */
+
+[data-mj="sidebar-collapse"],
+.app-ltr-12nlbd9 {
+
+  width: 42px !important;
+  height: 42px !important;
+
+  border-radius: 10px !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10,26,28,.95),
+      rgba(5,14,16,.92)
+    ) !important;
+
+  border: 1px solid rgba(80,210,193,.35) !important;
+
+  box-shadow:
+    inset 0 0 12px rgba(80,210,193,.06),
+    0 0 14px rgba(80,210,193,.14) !important;
+
+  color: #ffffff !important;
+}
+
+[data-mj="sidebar-collapse"]:hover,
+.app-ltr-12nlbd9:hover {
+
+  border-color: rgba(116,242,228,.75) !important;
+
+  box-shadow:
+    inset 0 0 16px rgba(80,210,193,.12),
+    0 0 22px rgba(80,210,193,.24) !important;
+
+  color: #74f2e4 !important;
+}
+/* ===== COLLAPSED SIDEBAR FIX ===== */
+
+/* Убираем лишний glow у кнопок при закрытом меню */
+
+.app-ltr-1v4y1zo {
+  overflow: hidden !important;
+}
+
+/* Иконка по центру */
+
+.app-ltr-1trb7go {
+  flex-shrink: 0 !important;
+}
+
+/* Когда sidebar свернут */
+
+[data-mj="sidebar-content"] .app-ltr-1v4y1zo {
+  box-sizing: border-box !important;
+}
+
+/* Уменьшаем внешний glow именно у кнопок */
+
+.app-ltr-1v4y1zo {
+  box-shadow:
+    inset 0 0 8px rgba(80,210,193,.04),
+    0 0 8px rgba(80,210,193,.06) !important;
+}
+
+/* Active */
+
+.app-ltr-1v4y1zo.active-link,
+.app-ltr-1v4y1zo[aria-current="page"] {
+  box-shadow:
+    inset 0 0 12px rgba(80,210,193,.12),
+    0 0 12px rgba(80,210,193,.12) !important;
+}
