@@ -895,3 +895,75 @@ h3,
     border-radius: 8px !important;
   }
 }
+
+/* ===== EXTRA HEADER / FOOTER FIX ===== */
+
+/* Header full wrapper */
+html body [data-mj="custom-header"].app-ltr-zuu3g9,
+html body [aria-label="site-header"].app-ltr-zuu3g9 {
+  background: rgba(3, 12, 14, 0.96) !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(80,210,193,.45) !important;
+  box-shadow:
+    inset 0 -1px 0 rgba(80,210,193,.35),
+    0 8px 28px rgba(80,210,193,.12) !important;
+}
+
+/* Header inner blocks */
+html body [data-mj="header-left"],
+html body [data-mj="header-center"],
+html body [data-mj="header-right"],
+html body .app-ltr-cvus8s {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Footer main wrapper */
+html body footer[data-mj="footer"],
+html body footer.app-ltr-17pabxy,
+html body .app-ltr-1l44gyp,
+html body .app-ltr-cfnr2u,
+html body .app-ltr-ywf5jp,
+html body .app-ltr-176106l,
+html body .app-ltr-19zdw54,
+html body .app-ltr-76sv76 {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Footer background only on main footer */
+html body footer[data-mj="footer"].app-ltr-17pabxy {
+  background:
+    radial-gradient(700px 220px at 50% 0%, rgba(80,210,193,.14), transparent 65%),
+    rgba(4,14,16,.92) !important;
+  border-top: 1px solid rgba(80,210,193,.35) !important;
+  box-shadow: 0 -18px 40px rgba(80,210,193,.08) !important;
+}
+
+/* Footer links */
+html body footer[data-mj="footer"] a.sl-navlink,
+html body footer[data-mj="footer"] .app-ltr-4qstdc {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  color: #dffafa !important;
+}
+
+/* Footer nav spacing */
+html body footer[data-mj="footer"] [data-mj="footer-nav"],
+html body footer[data-mj="footer"] .app-ltr-1uzs5zs {
+  display: flex !important;
+  gap: 40px !important;
+  background: transparent !important;
+}
+
+/* 18+ and language */
+html body footer[data-mj="footer"] .app-ltr-1lwn41g,
+html body footer[data-mj="footer"] .sl-select__control {
+  background: rgba(5,18,20,.85) !important;
+  border: 1px solid rgba(80,210,193,.34) !important;
+  box-shadow: 0 0 12px rgba(80,210,193,.10) !important;
+}
