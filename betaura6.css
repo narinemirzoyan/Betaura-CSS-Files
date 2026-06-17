@@ -1372,3 +1372,248 @@ body,
 .app-ltr-1959n0c {
   color: #dffafa !important;
 }
+
+/* =========================================================
+   BETAURA FINAL VISUAL OVERRIDE
+   ADD TO END OF EXISTING CSS
+   ========================================================= */
+
+/* ---------- SIDEBAR WRAPPER ---------- */
+
+[data-mj="sidebar-content"],
+.app-ltr-1khil54,
+.app-ltr-py5jdu,
+.app-ltr-tnx8um,
+[data-mj="sidebar-nav"],
+.app-ltr-upe1zs {
+
+  background:
+    radial-gradient(
+      420px 320px at 50% 0%,
+      rgba(80,210,193,.16),
+      transparent 68%
+    ),
+    rgba(4,14,16,.92) !important;
+
+  box-shadow:
+    inset -1px 0 0 rgba(80,210,193,.32),
+    0 0 0 1px rgba(80,210,193,.08),
+    18px 0 36px rgba(80,210,193,.08) !important;
+}
+
+/* Sidebar footer */
+
+[data-mj="sidebar-footer"],
+.app-ltr-1ermvjc {
+  background: transparent !important;
+  border-top: 0 !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(80,210,193,.18) !important;
+}
+
+/* Sidebar buttons */
+
+.sl-navlink,
+.app-ltr-1v4y1zo,
+.app-ltr-ditbe6 {
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(11,30,32,.95),
+      rgba(5,14,16,.92)
+    ) !important;
+
+  border: 1px solid rgba(80,210,193,.34) !important;
+
+  border-radius: 10px !important;
+
+  box-shadow:
+    inset 0 0 14px rgba(80,210,193,.06),
+    0 0 14px rgba(80,210,193,.10) !important;
+
+  transition: all .2s ease !important;
+}
+
+/* Hover */
+
+.sl-navlink:hover,
+.app-ltr-1v4y1zo:hover,
+.app-ltr-ditbe6:hover {
+
+  border-color: rgba(116,242,228,.78) !important;
+
+  box-shadow:
+    inset 0 0 20px rgba(80,210,193,.16),
+    0 0 26px rgba(80,210,193,.26) !important;
+}
+
+/* Active item */
+
+.sl-navlink.active-link,
+.app-ltr-1v4y1zo.active-link,
+.sl-navlink[aria-current="page"] {
+
+  border-color: rgba(116,242,228,.85) !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(80,210,193,.22),
+      rgba(12,40,42,.95)
+    ) !important;
+
+  box-shadow:
+    inset 0 0 20px rgba(80,210,193,.18),
+    0 0 30px rgba(80,210,193,.28) !important;
+}
+
+/* Sidebar text */
+
+.app-ltr-10t84xr,
+.app-ltr-1h2gnhw {
+  color: inherit !important;
+  font-weight: 600 !important;
+}
+
+/* Sidebar icons */
+
+.app-ltr-1trb7go,
+.app-ltr-76xqen {
+  filter:
+    drop-shadow(0 0 6px rgba(80,210,193,.35)) !important;
+}
+
+/* ---------- HEADER ---------- */
+
+[data-mj="custom-header"],
+.app-ltr-zuu3g9 {
+
+  background:
+    radial-gradient(
+      520px 120px at 65% 0%,
+      rgba(80,210,193,.24),
+      transparent 70%
+    ),
+    rgba(4,12,14,.94) !important;
+
+  box-shadow:
+    inset 0 -1px 0 rgba(80,210,193,.35),
+    0 0 28px rgba(80,210,193,.18) !important;
+}
+
+/* Login */
+
+[data-mj="login-button"],
+.app-ltr-z5fvu1 {
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(12,28,31,.95),
+      rgba(5,14,16,.90)
+    ) !important;
+
+  border: 1px solid rgba(80,210,193,.34) !important;
+
+  box-shadow:
+    0 0 14px rgba(80,210,193,.12) !important;
+}
+
+/* Register */
+
+[data-mj="register-button"],
+.app-ltr-576p8x {
+
+  background:
+    linear-gradient(
+      180deg,
+      #8cf8ec,
+      #50d2c1
+    ) !important;
+
+  border: 1px solid rgba(116,242,228,.70) !important;
+
+  box-shadow:
+    0 0 22px rgba(80,210,193,.25) !important;
+
+  color: #061312 !important;
+}
+
+/* Language selector */
+
+.app-ltr-7c1sc7-control {
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(12,28,31,.95),
+      rgba(5,14,16,.90)
+    ) !important;
+
+  border: 1px solid rgba(80,210,193,.34) !important;
+
+  box-shadow:
+    0 0 14px rgba(80,210,193,.12) !important;
+}
+
+/* ---------- FOOTER ---------- */
+
+[data-mj="footer"],
+.app-ltr-17pabxy {
+
+  background:
+    radial-gradient(
+      760px 240px at 50% 0%,
+      rgba(80,210,193,.20),
+      transparent 65%
+    ),
+    rgba(4,14,16,.94) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(80,210,193,.35),
+    0 -25px 50px rgba(80,210,193,.12) !important;
+}
+
+/* Footer divider */
+
+.app-ltr-5ciqmr {
+
+  border: 0 !important;
+  height: 1px !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(80,210,193,.70),
+      transparent
+    ) !important;
+
+  box-shadow:
+    0 0 16px rgba(80,210,193,.45) !important;
+}
+
+/* Social buttons */
+
+.app-ltr-4cj164 {
+
+  background:
+    rgba(8,24,26,.72) !important;
+
+  border: 1px solid rgba(80,210,193,.25) !important;
+
+  border-radius: 10px !important;
+
+  box-shadow:
+    0 0 12px rgba(80,210,193,.10) !important;
+}
+
+.app-ltr-4cj164:hover {
+
+  border-color: rgba(116,242,228,.70) !important;
+
+  box-shadow:
+    0 0 20px rgba(80,210,193,.25) !important;
+}
