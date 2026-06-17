@@ -940,3 +940,156 @@ footer a:hover,
     border-radius: 8px !important;
   }
 }
+
+/* ===== BetAura reference visual override ===== */
+
+html, body, #root {
+  background:
+    radial-gradient(900px 360px at 65% 0%, rgba(80,210,193,.22), transparent 60%),
+    radial-gradient(700px 280px at 70% 92%, rgba(80,210,193,.18), transparent 60%),
+    #061012 !important;
+}
+
+/* Sidebar buttons */
+aside a,
+aside button,
+.sidebar a,
+.sidebar button,
+.menu-item,
+.nav-item {
+  background: linear-gradient(180deg, rgba(80,210,193,.13), rgba(7,18,20,.75)) !important;
+  border: 1px solid rgba(80,210,193,.45) !important;
+  border-radius: 10px !important;
+  color: #f4ffff !important;
+  box-shadow:
+    inset 0 0 16px rgba(80,210,193,.08),
+    0 0 14px rgba(80,210,193,.14) !important;
+}
+
+/* Active / hover */
+aside a:hover,
+aside button:hover,
+.sidebar a:hover,
+.sidebar button:hover,
+.menu-item:hover,
+.nav-item:hover,
+[aria-current="page"] {
+  border-color: rgba(116,242,228,.75) !important;
+  box-shadow:
+    inset 0 0 20px rgba(80,210,193,.16),
+    0 0 22px rgba(80,210,193,.26) !important;
+  color: #74f2e4 !important;
+}
+
+/* Header */
+header,
+.header,
+.topbar,
+.navbar {
+  background: rgba(5,13,15,.86) !important;
+  border-bottom: 1px solid rgba(80,210,193,.25) !important;
+  box-shadow: 0 0 30px rgba(80,210,193,.12) !important;
+}
+
+/* Top tabs */
+.tabs button,
+.category-tabs button,
+.game-tabs button,
+.nav-tabs button,
+.top-categories button,
+.tab,
+.category-item {
+  background: linear-gradient(180deg, rgba(10,29,31,.95), rgba(5,15,17,.82)) !important;
+  border: 1px solid rgba(80,210,193,.38) !important;
+  border-radius: 10px !important;
+  color: #f2ffff !important;
+  box-shadow: 0 0 16px rgba(80,210,193,.12) !important;
+}
+
+.tabs button:hover,
+.category-tabs button:hover,
+.game-tabs button:hover,
+.nav-tabs button:hover,
+.tab:hover {
+  border-color: rgba(116,242,228,.75) !important;
+  color: #74f2e4 !important;
+}
+
+/* Table container */
+table,
+.data-table,
+.winners-table,
+.leaderboard-table {
+  width: calc(100% - 48px) !important;
+  margin: 22px auto !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(700px 320px at 90% 10%, rgba(80,210,193,.12), transparent 62%),
+    rgba(5,22,25,.82) !important;
+  border: 1px solid rgba(80,210,193,.36) !important;
+  box-shadow:
+    0 0 0 1px rgba(80,210,193,.08),
+    0 0 34px rgba(80,210,193,.18),
+    inset 0 1px 0 rgba(255,255,255,.04) !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+
+/* Table rows */
+th,
+td {
+  padding: 15px 24px !important;
+  border-bottom: 1px solid rgba(255,255,255,.06) !important;
+  color: #eaf6f7 !important;
+}
+
+th {
+  color: #ffffff !important;
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: .05em !important;
+  background: transparent !important;
+}
+
+tr:hover td {
+  background: rgba(80,210,193,.045) !important;
+}
+
+/* Green payout */
+.positive,
+.success,
+.win,
+.amount,
+.payout {
+  color: #02d982 !important;
+}
+
+/* Footer */
+footer,
+.footer,
+.site-footer {
+  background:
+    radial-gradient(700px 220px at 50% 0%, rgba(80,210,193,.22), transparent 60%),
+    rgba(4,14,16,.92) !important;
+  border-top: 1px solid rgba(80,210,193,.35) !important;
+  box-shadow: 0 -25px 50px rgba(80,210,193,.12) !important;
+}
+
+/* Footer line */
+footer hr,
+.footer hr {
+  border: 0 !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, transparent, rgba(80,210,193,.65), transparent) !important;
+  box-shadow: 0 0 16px rgba(80,210,193,.45) !important;
+}
+
+/* Hide banner/slider on this page if needed */
+.hero,
+.banner,
+.carousel,
+.promo-banner,
+.main-banner {
+  display: none !important;
+}
