@@ -1093,3 +1093,282 @@ footer hr,
 .main-banner {
   display: none !important;
 }
+
+/* =========================================================
+   BETAURA VISUAL OVERRIDE
+   ========================================================= */
+
+/* ---------- GLOBAL ---------- */
+
+html,
+body,
+#root {
+  background:
+    radial-gradient(900px 360px at 65% 0%, rgba(80,210,193,.22), transparent 60%),
+    radial-gradient(700px 280px at 70% 92%, rgba(80,210,193,.18), transparent 60%),
+    #061012 !important;
+}
+
+/* ---------- HEADER ---------- */
+
+[data-mj="custom-header"],
+.app-ltr-zuu3g9 {
+  background:
+    radial-gradient(520px 120px at 65% 0%, rgba(80,210,193,.24), transparent 70%),
+    rgba(4,12,14,.94) !important;
+
+  border-bottom: 1px solid rgba(80,210,193,.35) !important;
+
+  box-shadow:
+    0 0 28px rgba(80,210,193,.18),
+    inset 0 -1px 0 rgba(255,255,255,.04) !important;
+}
+
+[data-mj="header-right"],
+.app-ltr-1rhgrqx {
+  gap: 12px !important;
+}
+
+/* Logo */
+
+[data-mj="logo"] img,
+.app-ltr-le4fez {
+  filter: drop-shadow(0 0 10px rgba(80,210,193,.25)) !important;
+}
+
+/* ---------- HEADER BUTTONS ---------- */
+
+[data-mj="header-special-button"],
+.app-ltr-6pnhkd,
+
+[data-mj="login-button"],
+.app-ltr-z5fvu1,
+
+[data-mj="register-button"],
+.app-ltr-576p8x {
+  border-radius: 10px !important;
+  border: 1px solid rgba(80,210,193,.38) !important;
+
+  box-shadow:
+    0 0 16px rgba(80,210,193,.14) !important;
+}
+
+/* Login */
+
+[data-mj="login-button"],
+.app-ltr-z5fvu1 {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(12,28,31,.95),
+      rgba(5,14,16,.90)
+    ) !important;
+
+  color: #ffffff !important;
+}
+
+/* Register */
+
+[data-mj="register-button"],
+.app-ltr-576p8x {
+  background:
+    linear-gradient(
+      180deg,
+      #8cf8ec,
+      #50d2c1
+    ) !important;
+
+  color: #061312 !important;
+  font-weight: 700 !important;
+}
+
+/* ---------- LANGUAGE SELECTOR ---------- */
+
+.app-ltr-7c1sc7-control {
+  border-radius: 10px !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(12,28,31,.95),
+      rgba(5,14,16,.90)
+    ) !important;
+
+  border: 1px solid rgba(80,210,193,.34) !important;
+
+  box-shadow:
+    0 0 14px rgba(80,210,193,.12) !important;
+}
+
+/* ---------- SIDEBAR ---------- */
+
+[data-mj="sidebar-nav-list"],
+.app-ltr-0 {
+  background:
+    radial-gradient(
+      400px 300px at 50% 0%,
+      rgba(80,210,193,.12),
+      transparent 65%
+    ),
+    rgba(5,13,15,.86) !important;
+
+  padding: 12px 10px !important;
+}
+
+[data-mj="sidebar-section"],
+.app-ltr-ulqgb0 {
+  margin-bottom: 8px !important;
+}
+
+/* ---------- NAVIGATION BUTTONS ---------- */
+
+.sl-navlink,
+.app-ltr-1v4y1zo,
+.app-ltr-ditbe6 {
+  min-height: 42px !important;
+
+  border-radius: 10px !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(11,30,32,.95),
+      rgba(5,14,16,.92)
+    ) !important;
+
+  border: 1px solid rgba(80,210,193,.34) !important;
+
+  color: #f3ffff !important;
+
+  box-shadow:
+    inset 0 0 14px rgba(80,210,193,.06),
+    0 0 14px rgba(80,210,193,.10) !important;
+
+  transition: all .2s ease !important;
+}
+
+.sl-navlink:hover,
+.app-ltr-1v4y1zo:hover,
+.app-ltr-ditbe6:hover {
+  border-color: rgba(116,242,228,.78) !important;
+
+  box-shadow:
+    inset 0 0 20px rgba(80,210,193,.16),
+    0 0 26px rgba(80,210,193,.26) !important;
+}
+
+.sl-navlink.active-link,
+.app-ltr-1v4y1zo.active-link,
+.sl-navlink[aria-current="page"] {
+  border-color: rgba(116,242,228,.85) !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(80,210,193,.22),
+      rgba(12,40,42,.95)
+    ) !important;
+
+  box-shadow:
+    inset 0 0 20px rgba(80,210,193,.18),
+    0 0 30px rgba(80,210,193,.28) !important;
+}
+
+/* Text */
+
+.app-ltr-10t84xr,
+.app-ltr-1h2gnhw {
+  color: inherit !important;
+  font-weight: 600 !important;
+}
+
+/* Icons */
+
+.app-ltr-1trb7go,
+.app-ltr-76xqen {
+  filter:
+    drop-shadow(0 0 6px rgba(80,210,193,.35)) !important;
+}
+
+/* ---------- FOOTER ---------- */
+
+[data-mj="footer"],
+.app-ltr-17pabxy {
+  background:
+    radial-gradient(
+      760px 240px at 50% 0%,
+      rgba(80,210,193,.20),
+      transparent 65%
+    ),
+    rgba(4,14,16,.94) !important;
+
+  border-top: 1px solid rgba(80,210,193,.35) !important;
+
+  box-shadow:
+    0 -25px 50px rgba(80,210,193,.12) !important;
+}
+
+[data-mj="footer-nav"] .sl-navlink,
+.app-ltr-4qstdc {
+  color: #dffafa !important;
+}
+
+[data-mj="footer-nav"] .sl-navlink:hover,
+.app-ltr-4qstdc:hover {
+  color: #74f2e4 !important;
+}
+
+.app-ltr-1lwn41g {
+  border: 1px solid rgba(80,210,193,.45) !important;
+
+  color: #74f2e4 !important;
+
+  box-shadow:
+    0 0 14px rgba(80,210,193,.18) !important;
+}
+
+/* Footer divider */
+
+.app-ltr-5ciqmr {
+  border: 0 !important;
+  height: 1px !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(80,210,193,.70),
+      transparent
+    ) !important;
+
+  box-shadow:
+    0 0 16px rgba(80,210,193,.45) !important;
+}
+
+/* Social icons */
+
+[data-mj="social-links"] a,
+.app-ltr-4cj164 {
+  border-radius: 10px !important;
+
+  background:
+    rgba(8,24,26,.72) !important;
+
+  border: 1px solid rgba(80,210,193,.25) !important;
+
+  box-shadow:
+    0 0 12px rgba(80,210,193,.10) !important;
+}
+
+[data-mj="social-links"] a:hover,
+.app-ltr-4cj164:hover {
+  border-color: rgba(116,242,228,.70) !important;
+
+  box-shadow:
+    0 0 20px rgba(80,210,193,.25) !important;
+}
+
+[data-mj="footer-copyright"],
+.app-ltr-1959n0c {
+  color: #dffafa !important;
+}
