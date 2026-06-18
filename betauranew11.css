@@ -1124,3 +1124,30 @@ td {
     border-top: none !important;
     border-bottom: none !important;
 }
+
+/* Top Winners mobile - remove remaining row backgrounds */
+tbody tr,
+tbody tr:nth-child(odd),
+tbody tr:nth-child(even),
+tbody tr:hover,
+tr.app-ltr-x2nb0t {
+    background: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+tbody td,
+tbody td:first-child,
+tbody td:last-child {
+    background: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* If empty/generated rows still appear */
+tr:empty {
+    display: none !important;
+    height: 0 !important;
+}
