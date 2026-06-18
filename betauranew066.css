@@ -1083,3 +1083,26 @@ td:last-child,
     padding-right: 14px !important;
   }
 }
+
+/* Remove gaps between rows */
+table,
+.data-table,
+[class*="table"],
+[class*="Table"] {
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+}
+
+/* Remove row separators */
+tbody tr,
+.table-row,
+.data-row,
+[class*="tableRow"],
+[class*="TableRow"] {
+    border-bottom: none !important;
+}
+
+/* Continuous background */
+td {
+    background: transparent !important;
+}
