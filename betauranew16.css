@@ -1106,3 +1106,21 @@ tbody tr,
 td {
     background: transparent !important;
 }
+
+/* Top Winners - remove row gaps */
+table,
+.data-table,
+[class*="table"],
+[class*="Table"] {
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+}
+
+tbody tr {
+    border-bottom: none !important;
+}
+
+td {
+    border-top: none !important;
+    border-bottom: none !important;
+}
