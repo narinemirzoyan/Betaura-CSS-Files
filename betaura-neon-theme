@@ -1,0 +1,332 @@
+/* ==========================================================
+   BetaAura Neon Theme CSS
+   Created for unified dark/cyan casino-style visual theme
+   Use via Custom CSS or GitHub CDN
+   ========================================================== */
+
+:root {
+  --ba-bg-0: #010608;
+  --ba-bg-1: #031014;
+  --ba-bg-2: #061b20;
+  --ba-card: rgba(4, 22, 27, 0.92);
+  --ba-card-soft: rgba(5, 30, 36, 0.76);
+  --ba-border: rgba(0, 245, 225, 0.34);
+  --ba-border-strong: rgba(0, 245, 225, 0.62);
+  --ba-glow: rgba(0, 245, 225, 0.42);
+  --ba-glow-soft: rgba(0, 245, 225, 0.16);
+  --ba-accent: #00f5e1;
+  --ba-accent-2: #00b9ad;
+  --ba-text: #ffffff;
+  --ba-muted: rgba(255, 255, 255, 0.72);
+  --ba-radius: 12px;
+}
+
+/* Page background */
+html,
+body,
+#root,
+#__next,
+.app,
+.layout,
+main {
+  background:
+    radial-gradient(circle at 55% -10%, rgba(0, 245, 225, 0.18), transparent 34%),
+    radial-gradient(circle at 10% 20%, rgba(0, 245, 225, 0.08), transparent 26%),
+    linear-gradient(180deg, var(--ba-bg-1) 0%, var(--ba-bg-0) 100%) !important;
+  color: var(--ba-text) !important;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Top aurora glow */
+body::before {
+  content: "";
+  position: fixed;
+  top: -130px;
+  left: 18%;
+  width: 76%;
+  height: 250px;
+  background:
+    radial-gradient(circle, rgba(0, 245, 225, 0.26), transparent 60%),
+    linear-gradient(90deg, transparent, rgba(0, 245, 225, 0.22), transparent);
+  filter: blur(6px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header / footer */
+header,
+footer,
+[class*="header"],
+[class*="footer"] {
+  background: linear-gradient(180deg, rgba(3, 18, 23, 0.98), rgba(1, 8, 11, 0.98)) !important;
+  border-color: var(--ba-border) !important;
+  box-shadow:
+    0 0 22px var(--ba-glow-soft),
+    inset 0 0 20px rgba(0, 245, 225, 0.04) !important;
+}
+
+header,
+[class*="header"] {
+  border-bottom: 1px solid var(--ba-border) !important;
+}
+
+footer,
+[class*="footer"] {
+  border-top: 1px solid rgba(0, 245, 225, 0.24) !important;
+}
+
+/* Main panels, containers and cards */
+[class*="container"],
+[class*="section"],
+[class*="content"],
+[class*="panel"],
+[class*="card"],
+[class*="widget"],
+[class*="box"],
+[class*="sidebar"],
+[class*="drawer"],
+[class*="modal"] {
+  border-color: var(--ba-border) !important;
+}
+
+[class*="card"],
+[class*="widget"],
+[class*="panel"],
+[class*="box"],
+[class*="modal"] {
+  background: linear-gradient(180deg, var(--ba-card-soft), var(--ba-card)) !important;
+  border: 1px solid var(--ba-border) !important;
+  border-radius: var(--ba-radius) !important;
+  box-shadow:
+    0 0 14px rgba(0, 245, 225, 0.14),
+    inset 0 0 20px rgba(0, 245, 225, 0.05) !important;
+}
+
+/* Sidebar */
+[class*="sidebar"],
+aside,
+nav {
+  background: linear-gradient(180deg, rgba(2, 14, 18, 0.98), rgba(1, 7, 10, 0.98)) !important;
+  border-right: 1px solid rgba(0, 245, 225, 0.22) !important;
+  box-shadow: 8px 0 30px rgba(0, 245, 225, 0.06) !important;
+}
+
+/* Buttons, tabs, menu items */
+button,
+[role="button"],
+a[class*="button"],
+[class*="button"],
+[class*="btn"],
+[class*="tab"],
+[class*="menu-item"],
+[class*="nav-item"],
+[class*="category"],
+[class*="link"] {
+  border-radius: var(--ba-radius) !important;
+  transition: all 0.22s ease !important;
+}
+
+button,
+[role="button"],
+[class*="button"],
+[class*="btn"],
+[class*="tab"],
+[class*="menu-item"],
+[class*="nav-item"],
+[class*="category"] {
+  background: linear-gradient(180deg, rgba(6, 30, 36, 0.95), rgba(2, 12, 15, 0.95)) !important;
+  border: 1px solid rgba(0, 245, 225, 0.28) !important;
+  color: var(--ba-text) !important;
+  box-shadow:
+    0 0 10px rgba(0, 245, 225, 0.12),
+    inset 0 0 14px rgba(0, 245, 225, 0.04) !important;
+}
+
+button:hover,
+[role="button"]:hover,
+[class*="button"]:hover,
+[class*="btn"]:hover,
+[class*="tab"]:hover,
+[class*="menu-item"]:hover,
+[class*="nav-item"]:hover,
+[class*="category"]:hover,
+[class*="active"],
+[class*="selected"] {
+  background: linear-gradient(180deg, var(--ba-accent), var(--ba-accent-2)) !important;
+  border-color: var(--ba-border-strong) !important;
+  color: #021012 !important;
+  box-shadow:
+    0 0 18px rgba(0, 245, 225, 0.62),
+    0 0 38px rgba(0, 245, 225, 0.24),
+    inset 0 0 12px rgba(255, 255, 255, 0.20) !important;
+}
+
+button:hover svg,
+[class*="active"] svg,
+[class*="selected"] svg {
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.75));
+}
+
+/* Register / primary action button */
+button[type="submit"],
+[class*="primary"],
+[class*="register"],
+[class*="claim"] {
+  background: linear-gradient(180deg, #22fff0, #00b9ad) !important;
+  color: #021012 !important;
+  border: 1px solid rgba(180, 255, 250, 0.7) !important;
+  box-shadow:
+    0 0 18px rgba(0, 245, 225, 0.55),
+    inset 0 0 10px rgba(255, 255, 255, 0.25) !important;
+  font-weight: 700 !important;
+}
+
+/* Inputs / search */
+input,
+textarea,
+select,
+[class*="input"],
+[class*="search"] {
+  background: rgba(2, 14, 18, 0.92) !important;
+  border: 1px solid rgba(0, 245, 225, 0.28) !important;
+  color: var(--ba-text) !important;
+  border-radius: var(--ba-radius) !important;
+  box-shadow: inset 0 0 14px rgba(0, 245, 225, 0.07) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.56) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--ba-border-strong) !important;
+  outline: none !important;
+  box-shadow:
+    0 0 14px rgba(0, 245, 225, 0.28),
+    inset 0 0 14px rgba(0, 245, 225, 0.08) !important;
+}
+
+/* Banners / sliders */
+[class*="banner"],
+[class*="slider"],
+[class*="carousel"] {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+}
+
+[class*="banner"] img,
+[class*="slider"] img,
+[class*="carousel"] img {
+  border-radius: 16px !important;
+  box-shadow:
+    0 0 24px rgba(0, 245, 225, 0.24),
+    0 0 62px rgba(0, 245, 225, 0.10) !important;
+}
+
+/* Game cards */
+[class*="game"],
+[class*="provider"],
+[class*="promotion"] {
+  border-color: rgba(0, 245, 225, 0.24) !important;
+}
+
+[class*="game"]:hover,
+[class*="provider"]:hover,
+[class*="promotion"]:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 18px rgba(0, 245, 225, 0.28),
+    0 0 38px rgba(0, 245, 225, 0.10) !important;
+}
+
+/* Text colors */
+a,
+[class*="accent"],
+[class*="title"] strong,
+[class*="highlight"] {
+  color: var(--ba-accent) !important;
+}
+
+p,
+span,
+li,
+label {
+  color: inherit;
+}
+
+[class*="muted"],
+[class*="subtitle"],
+[class*="description"] {
+  color: var(--ba-muted) !important;
+}
+
+/* Thin glowing separators */
+hr,
+[class*="divider"],
+[class*="separator"] {
+  border-color: rgba(0, 245, 225, 0.22) !important;
+  box-shadow: 0 0 10px rgba(0, 245, 225, 0.14) !important;
+}
+
+/* Icons */
+svg,
+[class*="icon"] {
+  color: currentColor !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #02090c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 245, 225, 0.42);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 245, 225, 0.68);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  body::before {
+    left: -10%;
+    width: 120%;
+    height: 190px;
+  }
+
+  [class*="card"],
+  [class*="widget"],
+  [class*="panel"],
+  [class*="box"] {
+    border-radius: 10px !important;
+  }
+
+  button,
+  [role="button"],
+  [class*="button"],
+  [class*="btn"],
+  [class*="tab"],
+  [class*="menu-item"],
+  [class*="nav-item"] {
+    border-radius: 10px !important;
+  }
+}
