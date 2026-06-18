@@ -1,0 +1,611 @@
+
+/* =========================================================
+   BetAura Hyperliquid Premium v3
+   Load this file LAST, after betauranew3.css and all previous overrides.
+
+   Focus:
+   - unified sidebar surface, no grey/dark double background
+   - premium Top Winners table panel
+   - rounded cinematic hero banner
+   - restrained Hyperliquid-style teal accents
+   - darker aurora + galaxy background
+   ========================================================= */
+
+:root {
+  --ba-hl-bg0: #02070a;
+  --ba-hl-bg1: #051014;
+  --ba-hl-bg2: #07181d;
+  --ba-hl-panel: rgba(7, 17, 21, 0.86);
+  --ba-hl-panel-2: rgba(10, 24, 29, 0.72);
+  --ba-hl-panel-3: rgba(13, 31, 36, 0.58);
+  --ba-hl-cyan: #45d7ca;
+  --ba-hl-cyan-2: #7af0e5;
+  --ba-hl-cyan-dim: rgba(69, 215, 202, 0.16);
+  --ba-hl-cyan-line: rgba(93, 213, 204, 0.22);
+  --ba-hl-text: #ecf4f5;
+  --ba-hl-muted: rgba(222, 235, 237, 0.72);
+  --ba-hl-soft: rgba(255, 255, 255, 0.045);
+  --ba-hl-radius: 16px;
+  --ba-hl-radius-lg: 22px;
+  --ba-hl-ease: 180ms ease-out;
+}
+
+html,
+body,
+#root,
+[data-mj="root-layout"],
+[data-mj="content-wrapper"],
+[data-mj="page-content"] {
+  background:
+    radial-gradient(900px 280px at 50% -7%, rgba(65, 188, 181, 0.20), transparent 58%),
+    radial-gradient(760px 300px at 72% 8%, rgba(41, 128, 143, 0.09), transparent 64%),
+    radial-gradient(520px 260px at 14% 14%, rgba(39, 112, 116, 0.08), transparent 62%),
+    linear-gradient(180deg, #041014 0%, #02090c 42%, #010608 100%) !important;
+  color: var(--ba-hl-text) !important;
+}
+
+body::before {
+  content: "" !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  opacity: 0.74 !important;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(255,255,255,0.20) 0 0.7px, transparent 1.2px),
+    radial-gradient(circle at 19% 45%, rgba(255,255,255,0.16) 0 0.75px, transparent 1.25px),
+    radial-gradient(circle at 31% 11%, rgba(255,255,255,0.13) 0 0.7px, transparent 1.2px),
+    radial-gradient(circle at 46% 25%, rgba(255,255,255,0.17) 0 0.75px, transparent 1.25px),
+    radial-gradient(circle at 61% 9%, rgba(255,255,255,0.18) 0 0.8px, transparent 1.3px),
+    radial-gradient(circle at 76% 31%, rgba(255,255,255,0.14) 0 0.75px, transparent 1.25px),
+    radial-gradient(circle at 91% 15%, rgba(255,255,255,0.17) 0 0.8px, transparent 1.3px),
+    radial-gradient(760px 130px at 48% 2%, rgba(69, 215, 202, 0.145), transparent 64%),
+    radial-gradient(540px 120px at 57% 7%, rgba(92, 185, 205, 0.07), transparent 60%) !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+/* remove the previous sticky/static horizontal line artifact */
+body::after,
+[data-mj="footer"]::before,
+[data-mj="footer"] hr,
+.app-ltr-5ciqmr,
+[data-mj="widget-banner"]::after,
+[data-mj="widget-banner-container"]::before,
+[data-mj="widget-banner-container"]::after,
+[data-mj="widget-phoenix-sport-header"]::before,
+[data-mj="widget-phoenix-sport-header"]::after,
+[data-mj="widget-phoenix-sport"]::before,
+[data-mj="widget-phoenix-sport"]::after,
+[data-mj="widget-game-slider"]::before,
+[data-mj="widget-game-slider"]::after,
+[data-mj="widget-pages-slider"]::before,
+[data-mj="widget-pages-slider"]::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* =========================================================
+   unified sidebar surface
+   ========================================================= */
+
+[data-mj="sidebar"] {
+  background:
+    radial-gradient(520px 320px at 58% -4%, rgba(69, 215, 202, 0.135), transparent 64%),
+    linear-gradient(180deg, rgba(8, 20, 24, 0.985), rgba(4, 11, 14, 0.97)) !important;
+  border-right: 1px solid rgba(79, 182, 176, 0.20) !important;
+  box-shadow:
+    inset -1px 0 0 rgba(255,255,255,0.014),
+    10px 0 28px rgba(0,0,0,0.24) !important;
+}
+
+[data-mj="sidebar"] *,
+[data-mj="sidebar-content"],
+[data-mj="sidebar-content"] > div,
+[data-mj="sidebar-content"] > div > div,
+[data-mj="sidebar-nav"],
+[data-mj="sidebar-nav-list"],
+[data-mj="sidebar-section"],
+[data-mj="sidebar-section"] > div,
+[data-mj="sidebar-section"] > div > div,
+[data-mj="sidebar-footer"] {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+[data-mj="sidebar"]::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: -1px !important;
+  width: 1px !important;
+  height: 100% !important;
+  pointer-events: none !important;
+  background: linear-gradient(180deg, transparent 2%, rgba(85, 211, 203, 0.24) 18%, rgba(85, 211, 203, 0.12) 64%, transparent 100%) !important;
+  box-shadow: 0 0 16px rgba(69, 215, 202, 0.08) !important;
+}
+
+[data-mj="sidebar-nav"] a,
+[data-mj="sidebar-special-button"] a,
+.sl-navlink.app-ltr-1v4y1zo,
+.app-ltr-ditbe6 {
+  min-height: 44px !important;
+  border-radius: 12px !important;
+  background:
+    linear-gradient(180deg, rgba(13, 31, 36, 0.78), rgba(7, 20, 24, 0.82)) !important;
+  border: 1px solid rgba(82, 188, 181, 0.24) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.018),
+    0 0 0 rgba(0,0,0,0) !important;
+  color: #f4fbfb !important;
+  transition: background var(--ba-hl-ease), border-color var(--ba-hl-ease), box-shadow var(--ba-hl-ease), transform var(--ba-hl-ease) !important;
+}
+
+[data-mj="sidebar-nav"] a:hover,
+[data-mj="sidebar-special-button"] a:hover,
+.sl-navlink.app-ltr-1v4y1zo:hover,
+.app-ltr-ditbe6:hover {
+  background:
+    radial-gradient(180px 72px at 18% 0%, rgba(69, 215, 202, 0.10), transparent 72%),
+    linear-gradient(180deg, rgba(16, 42, 48, 0.90), rgba(8, 24, 28, 0.90)) !important;
+  border-color: rgba(112, 220, 212, 0.38) !important;
+  box-shadow:
+    inset 0 0 16px rgba(69, 215, 202, 0.045),
+    0 0 14px rgba(69, 215, 202, 0.055) !important;
+  transform: translateY(-1px) !important;
+}
+
+[data-mj="sidebar-special-button"] a,
+[data-mj="sidebar-nav"] li:first-child a,
+.app-ltr-ditbe6 {
+  background:
+    radial-gradient(210px 90px at 20% 0%, rgba(122, 240, 229, 0.14), transparent 72%),
+    linear-gradient(180deg, rgba(18, 62, 67, 0.86), rgba(8, 31, 36, 0.92)) !important;
+  border-color: rgba(122, 240, 229, 0.46) !important;
+  box-shadow:
+    inset 0 0 20px rgba(69, 215, 202, 0.06),
+    0 0 18px rgba(69, 215, 202, 0.085) !important;
+}
+
+[data-mj="sidebar-nav"] [style*="mask-image"],
+[data-mj="widget-pages-slider-nav"] [style*="mask-image"],
+.app-ltr-1trb7go,
+.app-ltr-ee603f {
+  background-color: currentColor !important;
+  filter: none !important;
+  opacity: 0.96 !important;
+}
+
+/* =========================================================
+   header and category pills, closer to Hyperliquid restraint
+   ========================================================= */
+
+[data-mj="header"] {
+  background:
+    radial-gradient(860px 170px at 50% -20%, rgba(69, 215, 202, 0.18), transparent 64%),
+    linear-gradient(180deg, rgba(4, 11, 14, 0.92), rgba(5, 14, 17, 0.70)) !important;
+  border-bottom: 1px solid rgba(78, 176, 170, 0.17) !important;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.22) !important;
+  backdrop-filter: blur(16px) saturate(1.02) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(1.02) !important;
+}
+
+[data-mj="header"]::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(650px 118px at 51% 10%, rgba(72, 205, 195, 0.115), transparent 60%),
+    radial-gradient(430px 92px at 61% 0%, rgba(88, 176, 205, 0.06), transparent 58%) !important;
+  opacity: 1 !important;
+}
+
+[data-mj="custom-header"] a,
+[data-mj="widget-pages-slider-nav"] a,
+[data-mj="login-button"],
+[data-mj="register-button"],
+[data-mj="header-special-button"],
+.sl-select__control {
+  box-shadow: none !important;
+}
+
+[data-mj="widget-pages-slider-nav"] a,
+.app-ltr-15xodk8 {
+  min-height: 42px !important;
+  border-radius: 10px !important;
+  background:
+    linear-gradient(180deg, rgba(10, 24, 28, 0.86), rgba(5, 15, 18, 0.90)) !important;
+  border: 1px solid rgba(80, 176, 170, 0.21) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.016) !important;
+}
+
+[data-mj="widget-pages-slider-nav"] a:hover,
+.app-ltr-15xodk8:hover {
+  border-color: rgba(116, 220, 212, 0.34) !important;
+  background:
+    linear-gradient(180deg, rgba(14, 34, 39, 0.90), rgba(7, 20, 24, 0.92)) !important;
+  box-shadow: 0 0 14px rgba(69, 215, 202, 0.055) !important;
+}
+
+[data-mj="register-button"],
+.app-ltr-576p8x {
+  background: linear-gradient(180deg, #7cece1, #4bd3c5) !important;
+  color: #061215 !important;
+  border: 1px solid rgba(126, 236, 225, 0.56) !important;
+  box-shadow: 0 0 14px rgba(69, 215, 202, 0.13) !important;
+}
+
+[data-mj="login-button"],
+.app-ltr-z5fvu1,
+[data-mj="header-special-button"],
+.app-ltr-6pnhkd,
+.sl-select__control {
+  background:
+    linear-gradient(180deg, rgba(10, 24, 28, 0.86), rgba(5, 15, 18, 0.92)) !important;
+  border: 1px solid rgba(80, 176, 170, 0.22) !important;
+  border-radius: 12px !important;
+}
+
+/* =========================================================
+   hero banner, softer and more rounded
+   ========================================================= */
+
+[data-mj="widget-banner"] {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: var(--ba-hl-radius-lg) !important;
+  background:
+    linear-gradient(180deg, rgba(7, 15, 18, 0.88), rgba(4, 10, 13, 0.96)) !important;
+  border: 1px solid rgba(75, 179, 172, 0.25) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.022),
+    inset 0 0 22px rgba(69, 215, 202, 0.035),
+    0 12px 30px rgba(0,0,0,0.20),
+    0 0 18px rgba(69, 215, 202, 0.045) !important;
+}
+
+[data-mj="widget-banner"]::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  border-radius: inherit !important;
+  background:
+    radial-gradient(780px 260px at 70% 62%, rgba(69, 215, 202, 0.052), transparent 64%),
+    radial-gradient(460px 130px at 28% 24%, rgba(90, 190, 205, 0.036), transparent 58%),
+    linear-gradient(180deg, rgba(255,255,255,0.008), transparent 55%) !important;
+  mix-blend-mode: screen !important;
+  opacity: 1 !important;
+}
+
+[data-mj="widget-banner-link"],
+[data-mj="widget-banner-item"],
+[data-mj="widget-banner-slider"],
+[data-mj="widget-banner"] img,
+[data-mj="widget-banner-link"] img {
+  border-radius: calc(var(--ba-hl-radius-lg) - 3px) !important;
+}
+
+[data-mj="widget-banner"] img,
+[data-mj="widget-banner-link"] img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  filter: saturate(0.94) contrast(1.00) brightness(0.93) !important;
+}
+
+[data-mj="widget-banner"]:hover {
+  border-color: rgba(114, 220, 212, 0.34) !important;
+  box-shadow:
+    inset 0 0 24px rgba(69, 215, 202, 0.045),
+    0 14px 30px rgba(0,0,0,0.22),
+    0 0 22px rgba(69, 215, 202, 0.065) !important;
+}
+
+.app-ltr-htvxx3,
+.app-ltr-1i9ldv2,
+[data-mj="widget-banner"] button {
+  border-radius: 12px !important;
+  background: rgba(6, 18, 21, 0.80) !important;
+  border: 1px solid rgba(91, 195, 188, 0.26) !important;
+  box-shadow: none !important;
+}
+
+/* =========================================================
+   sports cards / world cup strip
+   ========================================================= */
+
+[data-mj="widget-phoenix-sport-header"],
+[data-mj="widget-phoenix-sport"] {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.ph-event-card {
+  border-radius: 14px !important;
+  background-image:
+    radial-gradient(260px 120px at 82% 100%, rgba(69, 215, 202, 0.065), transparent 64%),
+    linear-gradient(180deg, rgba(9, 21, 25, 0.92), rgba(5, 13, 16, 0.95)) !important;
+  border: 1px solid rgba(77, 177, 171, 0.17) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.014),
+    0 8px 18px rgba(0,0,0,0.16) !important;
+}
+
+.ph-outcome {
+  background: rgba(255,255,255,0.048) !important;
+  border: 1px solid rgba(78, 172, 167, 0.12) !important;
+  border-radius: 10px !important;
+}
+
+/* =========================================================
+   premium Top Winners table panel
+   ========================================================= */
+
+/* container around winners/table sections */
+[data-mj*="winner"],
+[data-mj*="Winner"],
+[data-mj*="top-winner"],
+[data-mj*="TopWinner"],
+[data-mj*="bet-win"],
+[data-mj*="BetWin"],
+[data-mj="widget-bet-win"],
+[data-mj="widget-game-slider"] {
+  background: transparent !important;
+}
+
+/* premium glass panel for direct table wrappers and common generated classes */
+[data-mj="widget-bet-win-container"],
+[data-mj="widget-bet-win-content"],
+[data-mj="widget-winners-container"],
+[data-mj="widget-winners-content"],
+[data-mj="top-winners"],
+[data-mj="top-winners-container"],
+[data-mj="top-winners-content"],
+.table-card,
+.winners-table,
+.leaderboard-table,
+.top-winners,
+.last-winners {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 18px !important;
+  background:
+    radial-gradient(720px 300px at 80% 0%, rgba(69, 215, 202, 0.055), transparent 62%),
+    linear-gradient(180deg, rgba(9, 22, 26, 0.84), rgba(5, 12, 15, 0.92)) !important;
+  border: 1px solid rgba(83, 185, 178, 0.23) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.018),
+    inset 0 0 24px rgba(69, 215, 202, 0.026),
+    0 18px 42px rgba(0,0,0,0.24),
+    0 0 20px rgba(69, 215, 202, 0.050) !important;
+}
+
+[data-mj="widget-bet-win-container"]::before,
+[data-mj="widget-bet-win-content"]::before,
+[data-mj="top-winners"]::before,
+.table-card::before,
+.winners-table::before,
+.leaderboard-table::before,
+.top-winners::before,
+.last-winners::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  border-radius: inherit !important;
+  background:
+    linear-gradient(90deg, rgba(122,240,229,0.10), transparent 18%, transparent 82%, rgba(122,240,229,0.06)),
+    radial-gradient(480px 120px at 50% 0%, rgba(69,215,202,0.052), transparent 68%) !important;
+  opacity: 0.95 !important;
+}
+
+/* actual tables */
+table,
+.data-table,
+[class*="table"],
+[class*="Table"] {
+  border-collapse: separate !important;
+  border-spacing: 0 6px !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+thead,
+thead tr,
+[class*="tableHead"],
+[class*="TableHead"] {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+th {
+  height: 44px !important;
+  padding: 0 28px !important;
+  background: rgba(4, 11, 14, 0.70) !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(115, 207, 199, 0.20) !important;
+  color: rgba(242, 249, 250, 0.92) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+  text-align: left !important;
+}
+
+th:first-child {
+  border-top-left-radius: 12px !important;
+}
+
+th:last-child {
+  border-top-right-radius: 12px !important;
+}
+
+tbody tr,
+.table-row,
+.data-row,
+[class*="tableRow"],
+[class*="TableRow"] {
+  background: transparent !important;
+  box-shadow: none !important;
+  transition: transform var(--ba-hl-ease), box-shadow var(--ba-hl-ease), background var(--ba-hl-ease) !important;
+}
+
+td {
+  min-height: 48px !important;
+  padding: 13px 28px !important;
+  background: rgba(13, 24, 29, 0.64) !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(255,255,255,0.020) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.16) !important;
+  color: rgba(238, 247, 248, 0.92) !important;
+  font-size: 13px !important;
+}
+
+tbody tr:nth-child(even) td {
+  background: rgba(10, 21, 26, 0.72) !important;
+}
+
+tbody tr:hover td {
+  background:
+    linear-gradient(90deg, rgba(69, 215, 202, 0.055), rgba(15, 31, 36, 0.82) 16%, rgba(15, 31, 36, 0.82) 84%, rgba(69, 215, 202, 0.035)) !important;
+  box-shadow: inset 0 0 16px rgba(69, 215, 202, 0.028) !important;
+}
+
+td:first-child {
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+  color: rgba(214, 229, 232, 0.80) !important;
+}
+
+td:last-child {
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+}
+
+/* greener payouts without loud glow */
+td:last-child,
+.positive,
+.success,
+.win,
+[class*="payout"],
+[class*="Payout"] {
+  color: #00d684 !important;
+  text-shadow: none !important;
+}
+
+/* Top Winners title/button polish */
+[data-mj*="winner"] h1,
+[data-mj*="winner"] h2,
+[data-mj*="winner"] h3,
+[data-mj*="Winner"] h1,
+[data-mj*="Winner"] h2,
+[data-mj*="Winner"] h3,
+.top-winners h1,
+.top-winners h2,
+.top-winners h3,
+.last-winners h1,
+.last-winners h2,
+.last-winners h3 {
+  color: #f4fbfb !important;
+  font-weight: 760 !important;
+  letter-spacing: -0.02em !important;
+}
+
+[data-mj*="winner"] button,
+[data-mj*="Winner"] button,
+.top-winners button,
+.last-winners button,
+.table-card button {
+  border-radius: 10px !important;
+  background:
+    linear-gradient(180deg, rgba(12, 34, 38, 0.84), rgba(6, 18, 21, 0.90)) !important;
+  border: 1px solid rgba(116, 220, 212, 0.34) !important;
+  color: #dff9f6 !important;
+  box-shadow: none !important;
+}
+
+[data-mj*="winner"] button:hover,
+[data-mj*="Winner"] button:hover,
+.top-winners button:hover,
+.last-winners button:hover,
+.table-card button:hover {
+  background:
+    linear-gradient(180deg, rgba(18, 47, 52, 0.90), rgba(8, 24, 28, 0.94)) !important;
+  border-color: rgba(130, 236, 227, 0.46) !important;
+  box-shadow: 0 0 14px rgba(69, 215, 202, 0.07) !important;
+}
+
+/* =========================================================
+   footer, clean and quiet
+   ========================================================= */
+
+[data-mj="footer"] {
+  margin-top: 36px !important;
+  background:
+    radial-gradient(780px 220px at 50% 0%, rgba(69, 215, 202, 0.105), transparent 62%),
+    linear-gradient(180deg, rgba(7, 18, 22, 0.52), rgba(3, 9, 12, 0.84)) !important;
+  border-top: 1px solid rgba(80, 176, 170, 0.15) !important;
+  box-shadow: 0 -16px 34px rgba(0,0,0,0.18) !important;
+}
+
+[data-mj="footer-nav-item"] a,
+[data-mj="footer"] a.sl-navlink,
+[data-mj="footer"] p,
+[data-mj="footer"] span {
+  color: rgba(226, 236, 238, 0.80) !important;
+  text-shadow: none !important;
+}
+
+[data-mj="footer-nav-item"] a:hover,
+[data-mj="footer"] a.sl-navlink:hover {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(69, 215, 202, 0.13) !important;
+}
+
+/* social icons */
+[data-mj="social-links"] a,
+.app-ltr-4cj164 {
+  border-radius: 9px !important;
+  background: rgba(6, 18, 21, 0.62) !important;
+  border: 1px solid rgba(82, 188, 181, 0.22) !important;
+  box-shadow: none !important;
+}
+
+[data-mj="social-links"] a:hover,
+.app-ltr-4cj164:hover {
+  border-color: rgba(122, 240, 229, 0.38) !important;
+  background: rgba(13, 34, 39, 0.78) !important;
+}
+
+/* reduce legacy over-glow globally */
+[data-mj="sidebar"] *,
+[data-mj="header"] *,
+[data-mj="widget-banner"] *,
+[data-mj="footer"] * {
+  text-shadow: none !important;
+}
+
+img {
+  image-rendering: auto !important;
+}
+
+@media (max-width: 992px) {
+  [data-mj="widget-banner"] {
+    border-radius: 16px !important;
+  }
+
+  th,
+  td {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
