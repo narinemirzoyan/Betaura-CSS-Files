@@ -1084,101 +1084,185 @@ td:last-child,
   }
 }
 
-/* Remove gaps between rows */
-table,
-.data-table,
-[class*="table"],
-[class*="Table"] {
-    border-collapse: collapse !important;
-    border-spacing: 0 !important;
+
+/* =========================================================
+   PATCH v2
+   Fixes:
+   1) horizontal category bar right-edge clipping / ensure last pill is fully visible
+   2) Top Winners internal gutter removal with wider usable table width
+   ========================================================= */
+
+/* ---------- HORIZONTAL CATEGORY BAR / LAST ITEM CLIPPING ---------- */
+
+/* Give the horizontal slider/scroller enough space on the right so the last pill
+   is not clipped by the next-arrow control. */
+[data-mj="widget-pages-slider"],
+[data-mj="widget-pages-slider-content"],
+[data-mj="widget-pages-slider-container"],
+[data-mj="widget-pages-slider-nav"],
+.app-ltr-1dqqygi,
+.app-ltr-1dqqygi > div {
+  overflow: visible !important;
 }
 
-/* Remove row separators */
+/* Inner scroller gets safe padding on the right for the arrow */
+[data-mj="widget-pages-slider-nav"],
+[data-mj="custom-header"],
+.app-ltr-1dqqygi {
+  padding-right: 72px !important;
+}
+
+/* Last pill should never sit flush against the arrow */
+[data-mj="widget-pages-slider-nav"] a:last-child,
+[data-mj="custom-header"] a:last-child,
+.app-ltr-15xodk8:last-child {
+  margin-right: 56px !important;
+}
+
+/* Prevent pills from shrinking into clipped text */
+[data-mj="widget-pages-slider-nav"] a,
+[data-mj="custom-header"] a,
+.app-ltr-15xodk8 {
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+}
+
+/* Keep the next arrow above the pills but not covering text */
+[data-mj="widget-pages-slider"] button,
+[data-mj="widget-pages-slider-container"] button,
+.app-ltr-1i9ldv2,
+.app-ltr-htvxx3 {
+  z-index: 4 !important;
+}
+
+/* ---------- TOP WINNERS / INTERNAL GUTTER REMOVAL ---------- */
+
+/* Remove side padding from all likely content wrappers */
+[data-mj="widget-bet-win-container"],
+[data-mj="widget-bet-win-content"],
+[data-mj="widget-winners-container"],
+[data-mj="widget-winners-content"],
+[data-mj="top-winners"],
+[data-mj="top-winners-container"],
+[data-mj="top-winners-content"],
+.table-card,
+.winners-table,
+.leaderboard-table,
+.top-winners,
+.last-winners {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Many implementations put the table inside one or two inner wrappers.
+   Flatten those wrappers so the table uses the panel width. */
+[data-mj="widget-bet-win-content"] > div,
+[data-mj="widget-winners-content"] > div,
+[data-mj="top-winners-content"] > div,
+.table-card > div,
+.winners-table > div,
+.leaderboard-table > div,
+.top-winners > div,
+.last-winners > div {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Keep the heading aligned nicely while the table stretches wider */
+[data-mj="widget-bet-win-container"] > h1,
+[data-mj="widget-bet-win-container"] > h2,
+[data-mj="widget-bet-win-container"] > h3,
+[data-mj="widget-bet-win-content"] > h1,
+[data-mj="widget-bet-win-content"] > h2,
+[data-mj="widget-bet-win-content"] > h3,
+[data-mj="widget-winners-content"] > h1,
+[data-mj="widget-winners-content"] > h2,
+[data-mj="widget-winners-content"] > h3,
+[data-mj="top-winners"] > h1,
+[data-mj="top-winners"] > h2,
+[data-mj="top-winners"] > h3,
+[data-mj="top-winners-content"] > h1,
+[data-mj="top-winners-content"] > h2,
+[data-mj="top-winners-content"] > h3,
+.table-card > h1,
+.table-card > h2,
+.table-card > h3,
+.winners-table > h1,
+.winners-table > h2,
+.winners-table > h3,
+.leaderboard-table > h1,
+.leaderboard-table > h2,
+.leaderboard-table > h3,
+.last-winners > h1,
+.last-winners > h2,
+.last-winners > h3 {
+  margin-left: 16px !important;
+  margin-right: 16px !important;
+}
+
+/* Force real table width and wrapper width */
+[data-mj="widget-bet-win-content"] table,
+[data-mj="widget-winners-content"] table,
+[data-mj="top-winners-content"] table,
+.table-card table,
+.winners-table table,
+.leaderboard-table table,
+.top-winners table,
+.last-winners table,
+table.data-table,
+table {
+  width: 100% !important;
+  min-width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Tighten cell padding slightly so the usable content width grows */
+th,
+td {
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+}
+
+/* Make row backgrounds and dividers span full usable width, not look inset */
 tbody tr,
 .table-row,
 .data-row,
 [class*="tableRow"],
 [class*="TableRow"] {
-    border-bottom: none !important;
+  background-clip: padding-box !important;
 }
 
-/* Continuous background */
-td {
-    background: transparent !important;
+/* If the implementation uses row/cell pseudo spacing, neutralize it */
+tbody tr::before,
+tbody tr::after,
+.table-row::before,
+.table-row::after,
+.data-row::before,
+.data-row::after {
+  content: none !important;
+  display: none !important;
 }
 
-/* Top Winners - remove row gaps */
-table,
-.data-table,
-[class*="table"],
-[class*="Table"] {
-    border-collapse: collapse !important;
-    border-spacing: 0 !important;
-}
-
-tbody tr {
-    border-bottom: none !important;
-}
-
-td {
-    border-top: none !important;
-    border-bottom: none !important;
-}
-
-/* Top Winners mobile - remove remaining row backgrounds */
-tbody tr,
-tbody tr:nth-child(odd),
-tbody tr:nth-child(even),
-tbody tr:hover,
-tr.app-ltr-x2nb0t {
-    background: transparent !important;
-    background-image: none !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-tbody td,
-tbody td:first-child,
-tbody td:last-child {
-    background: transparent !important;
-    background-image: none !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-/* If empty/generated rows still appear */
-tr:empty {
-    display: none !important;
-    height: 0 !important;
-}
-
-/* Top Winners mobile position fix */
-@media (max-width: 768px) {
-  [data-mj*="winner"],
-  [data-mj*="Winner"],
-  [data-mj="widget-bet-win"],
-  [data-mj="widget-bet-win-container"],
-  [data-mj="top-winners"],
-  .top-winners,
-  .last-winners {
-    order: initial !important;
-    margin-top: 24px !important;
-    margin-bottom: 24px !important;
+@media (max-width: 992px) {
+  [data-mj="widget-pages-slider-nav"],
+  [data-mj="custom-header"],
+  .app-ltr-1dqqygi {
+    padding-right: 56px !important;
   }
-}
 
-.app-ltr-nmc407 {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    width: 100% !important;
-}
+  [data-mj="widget-pages-slider-nav"] a:last-child,
+  [data-mj="custom-header"] a:last-child,
+  .app-ltr-15xodk8:last-child {
+    margin-right: 40px !important;
+  }
 
-.app-ltr-0 {
-    flex: 1 1 auto !important;
-}
-
-.app-ltr-zut9e9 {
-    margin-left: 0 !important;
-    flex: 0 0 auto !important;
+  th,
+  td {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
 }
