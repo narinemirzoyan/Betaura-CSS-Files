@@ -1167,7 +1167,6 @@ tr:empty {
   }
 }
 
-/* Top Winners header layout */
 .app-ltr-nmc407 {
     display: flex !important;
     justify-content: space-between !important;
@@ -1175,20 +1174,11 @@ tr:empty {
     width: 100% !important;
 }
 
-.app-ltr-zut9e9 {
-    margin-left: auto !important;
-    flex-shrink: 0 !important;
+.app-ltr-0 {
+    flex: 1 1 auto !important;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-    .app-ltr-nmc407 {
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-    }
-
-    .app-ltr-zut9e9 {
-        margin-left: auto !important;
-    }
+.app-ltr-zut9e9 {
+    margin-left: 0 !important;
+    flex: 0 0 auto !important;
 }
