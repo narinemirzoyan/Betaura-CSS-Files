@@ -1151,3 +1151,18 @@ tr:empty {
     display: none !important;
     height: 0 !important;
 }
+
+/* Top Winners mobile position fix */
+@media (max-width: 768px) {
+  [data-mj*="winner"],
+  [data-mj*="Winner"],
+  [data-mj="widget-bet-win"],
+  [data-mj="widget-bet-win-container"],
+  [data-mj="top-winners"],
+  .top-winners,
+  .last-winners {
+    order: initial !important;
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+  }
+}
