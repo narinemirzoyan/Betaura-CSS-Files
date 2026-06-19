@@ -1084,12 +1084,6 @@ td:last-child,
   }
 }
 
-.element1 {
-  position: relative;
-  z-index: 1;
-}
-
-.element2 {
-  position: relative;
-  z-index: 10;
+.app-ltr-ca8dpi-container {
+    display: none !important;
 }
