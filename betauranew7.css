@@ -1086,56 +1086,80 @@ td:last-child,
 
 
 /* =========================================================
-   FOOTER — FINAL SINGLE ABOUT COLUMN
-   Goal:
-   - one single centered "About" heading above the links column
-   - links aligned vertically in one clean column
-   - keep the rest of the footer order intact
-   - controls/social/copyright stay below
+   FOOTER — PRESERVE ORIGINAL STRUCTURE
+   Only changes the legal-links block into one vertical "About" column.
+   Logo remains visible on the left.
+   18+, language, social icons and copyright remain in their original order.
    ========================================================= */
 
-/* Main footer shell */
-[data-mj="footer"] {
-  margin-top: 42px !important;
-  background:
-    radial-gradient(900px 240px at 72% 0%, rgba(69, 215, 202, 0.065), transparent 62%),
-    linear-gradient(180deg, rgba(6, 17, 21, 0.92), rgba(3, 10, 13, 0.98)) !important;
-  border-top: 1px solid rgba(86, 178, 171, 0.14) !important;
-  box-shadow: 0 -12px 28px rgba(0, 0, 0, 0.14) !important;
-}
-
-[data-mj="footer-content"] {
-  width: min(100%, 1180px) !important;
-  margin: 0 auto !important;
-  padding: 44px 34px 24px !important;
-}
-
-/* Hide the original logo block in the top area only */
+/* Keep the original footer logo visible and in place */
 [data-mj="footer-logo"] {
-  display: none !important;
-}
-
-/* Turn the top area into a single centered content block */
-[data-mj="footer-top"] {
-  position: relative !important;
   display: flex !important;
-  flex-direction: column !important;
   align-items: center !important;
   justify-content: flex-start !important;
-  gap: 0 !important;
-  width: 100% !important;
-  margin: 0 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  margin: 0 !important;
   padding: 0 !important;
 }
 
-/* About title centered over the links column */
-[data-mj="footer-top"]::before {
+[data-mj="footer-logo"] img {
+  display: block !important;
+  width: 154px !important;
+  max-width: 154px !important;
+  height: auto !important;
+  opacity: 0.98 !important;
+}
+
+/* Footer top: logo left, About column centered */
+[data-mj="footer-top"] {
+  display: grid !important;
+  grid-template-columns: 180px minmax(220px, 1fr) 180px !important;
+  align-items: start !important;
+  width: 100% !important;
+  gap: 28px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Logo stays in the left column */
+[data-mj="footer-logo"] {
+  grid-column: 1 !important;
+  justify-self: start !important;
+}
+
+/* Existing links become one aligned vertical column */
+[data-mj="footer-nav"] {
+  grid-column: 2 !important;
+  justify-self: center !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+
+  width: max-content !important;
+  min-width: 170px !important;
+  max-width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  list-style: none !important;
+}
+
+/* "About" centered exactly over the links column */
+[data-mj="footer-nav"]::before {
   content: "About";
   display: block !important;
-  width: 220px !important;
-  margin: 0 auto 16px auto !important;
+
+  width: 100% !important;
+  margin: 0 0 14px 0 !important;
+  padding: 0 !important;
+
   text-align: center !important;
   color: rgba(247, 251, 252, 0.98) !important;
+
   font-family: var(--ba-font-main, Inter, ui-sans-serif, system-ui, sans-serif) !important;
   font-size: 15px !important;
   font-weight: 600 !important;
@@ -1143,25 +1167,7 @@ td:last-child,
   letter-spacing: -0.015em !important;
 }
 
-/* Legal links become a single clean centered column */
-[data-mj="footer-nav"] {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  justify-content: flex-start !important;
-  gap: 0 !important;
-  width: 220px !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  list-style: none !important;
-}
-
-/* Remove any previous pseudo heading */
-[data-mj="footer-nav"]::before {
-  content: none !important;
-  display: none !important;
-}
-
+/* Every row starts on the same vertical axis */
 [data-mj="footer-nav-item"] {
   display: block !important;
   width: 100% !important;
@@ -1173,17 +1179,23 @@ td:last-child,
 [data-mj="footer"] a.sl-navlink {
   display: block !important;
   width: 100% !important;
-  padding: 0 !important;
+
   margin: 0 !important;
+  padding: 0 !important;
   min-height: 30px !important;
+
   text-align: left !important;
   color: rgba(180, 201, 205, 0.78) !important;
+
   font-family: var(--ba-font-main, Inter, ui-sans-serif, system-ui, sans-serif) !important;
   font-size: 14px !important;
   font-weight: 400 !important;
   line-height: 2.05 !important;
   letter-spacing: -0.01em !important;
-  transition: color 160ms ease-out, transform 160ms ease-out !important;
+
+  transition:
+    color 160ms ease-out,
+    transform 160ms ease-out !important;
 }
 
 [data-mj="footer-nav-item"] a:hover,
@@ -1193,103 +1205,56 @@ td:last-child,
   text-shadow: none !important;
 }
 
-/* Controls row stays below */
+/* Preserve the rest of the footer structure */
 [data-mj="footer-content"] > .app-ltr-19zdw54 {
   display: flex !important;
   align-items: center !important;
-  justify-content: space-between !important;
-  gap: 16px !important;
+  justify-content: flex-end !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
   width: 100% !important;
-  margin-top: 28px !important;
-  padding: 0 !important;
+  margin-top: 22px !important;
 }
 
-/* Divider */
 [data-mj="footer"] hr,
 .app-ltr-5ciqmr {
   display: block !important;
-  width: 100% !important;
-  height: 1px !important;
-  margin: 24px 0 18px !important;
-  border: 0 !important;
-  background: rgba(95, 177, 170, 0.11) !important;
-  box-shadow: none !important;
 }
 
-/* Bottom row: socials right, copyright centered below */
 [data-mj="footer-bottom"] {
-  display: grid !important;
-  grid-template-columns: 1fr auto !important;
-  align-items: center !important;
-  gap: 24px !important;
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-[data-mj="social-links"] {
-  grid-column: 2 !important;
   display: flex !important;
   align-items: center !important;
-  justify-content: flex-end !important;
-  gap: 10px !important;
+  justify-content: space-between !important;
+  gap: 24px !important;
+  width: 100% !important;
 }
 
-[data-mj="social-links"] a,
-.app-ltr-4cj164 {
-  width: 34px !important;
-  height: 34px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  border-radius: 9px !important;
-  background: rgba(8, 21, 25, 0.72) !important;
-  border: 1px solid rgba(84, 175, 168, 0.16) !important;
-  box-shadow: none !important;
-}
-
-[data-mj="social-links"] a:hover,
-.app-ltr-4cj164:hover {
-  background: rgba(13, 31, 36, 0.84) !important;
-  border-color: rgba(120, 221, 212, 0.28) !important;
-}
-
-[data-mj="footer-copyright"] {
-  grid-column: 1 / -1 !important;
-  margin: 18px auto 0 !important;
-  color: rgba(180, 199, 202, 0.58) !important;
-  font-size: 12px !important;
-  font-weight: 400 !important;
-  line-height: 1.5 !important;
-  text-align: center !important;
-}
-
-/* Responsive */
+/* Responsive: logo stays above, About column below */
 @media (max-width: 760px) {
-  [data-mj="footer-content"] {
-    padding: 34px 20px 22px !important;
+  [data-mj="footer-top"] {
+    grid-template-columns: 1fr !important;
+    row-gap: 28px !important;
   }
 
-  [data-mj="footer-top"]::before,
+  [data-mj="footer-logo"],
   [data-mj="footer-nav"] {
-    width: 210px !important;
+    grid-column: 1 !important;
+  }
+
+  [data-mj="footer-logo"] {
+    justify-self: start !important;
+  }
+
+  [data-mj="footer-nav"] {
+    justify-self: center !important;
   }
 
   [data-mj="footer-content"] > .app-ltr-19zdw54 {
-    flex-wrap: wrap !important;
-    justify-content: space-between !important;
+    justify-content: flex-start !important;
   }
 
   [data-mj="footer-bottom"] {
-    grid-template-columns: 1fr !important;
-  }
-
-  [data-mj="social-links"] {
-    grid-column: 1 !important;
-    justify-content: center !important;
-  }
-
-  [data-mj="footer-copyright"] {
-    margin-top: 16px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
   }
 }
