@@ -1258,3 +1258,36 @@ td:last-child,
     align-items: flex-start !important;
   }
 }
+
+
+/* =========================================================
+   FINAL ALIGNMENT FIX
+   Only centers "About" over the exact width of the links column.
+   Everything else remains unchanged.
+   ========================================================= */
+
+[data-mj="footer-nav"] {
+  width: fit-content !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  justify-self: center !important;
+  align-items: stretch !important;
+}
+
+[data-mj="footer-nav"]::before {
+  width: 100% !important;
+  margin: 0 0 14px 0 !important;
+  text-align: center !important;
+}
+
+[data-mj="footer-nav-item"] {
+  width: 100% !important;
+}
+
+[data-mj="footer-nav-item"] a,
+[data-mj="footer"] a.sl-navlink {
+  width: auto !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+  text-align: left !important;
+}
